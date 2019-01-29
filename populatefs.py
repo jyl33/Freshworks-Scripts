@@ -219,7 +219,7 @@ def resolveTickets():
 
 
 def prompt_user():
-    choice = raw_input("\nPlease enter a value: \nAdd contacts (m)anually, or (r)ead from file.\nAdd (t)ickets, (u)pdate tickets or add (s)olution articles \nChanges will be made to " + color.RED + domain + color.END + ".freshservice.com. (c)hange domain \n")
+    choice = raw_input("\nPlease enter a value: \nAdd contacts (m)anually, or (r)ead from file.\nAdd (t)ickets, (u)pdate tickets or add (s)olution articles \nChanges will be made to " + color.CYAN     + domain + color.END + ".freshservice.com. (c)hange domain \n")
 
     if choice == ("m" or "M"):
         manual_contact()
