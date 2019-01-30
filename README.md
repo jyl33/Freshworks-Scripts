@@ -4,8 +4,8 @@
 - To run this script, open your terminal and navigate to the autoTicketSubmit folder and run 'python populatefs.py' or 'python populatefd.py'
 
 
-- This script requires the requests library. Install using 'pip install requests'
-	If you don't have pip, run these commands,
+- This script requires the requests library. Install using 'pip install requests'.
+	If you don't have pip, run these commands:
 	
 		1. curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 		2. python get-pip.py
