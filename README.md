@@ -5,12 +5,12 @@
 
 
 - This script requires the requests library. Install using 'pip install requests'
-
-	- If you don't have pip, run these commands:
+	If you don't have pip, run these commands,
 	
 		1. curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 		2. python get-pip.py
 		3. Install requests 'pip install requests' on the command line
+
 
 
 - make sure to have no blank lines in your txt files, this will result in an indexOutOfBounds error. If you're getting this error, check the referenced file and delete any lines with no text.
