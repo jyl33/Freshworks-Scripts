@@ -171,7 +171,7 @@ def file_contacts(contacts_file):
     prompt_user()
 
 #This method handles the ticket submission.
-def auto_submit():
+def auto_submit(num):
     count = 0
     start = time.time()
     minutes = 3 #Edit this value to edit the time between ticket submissions
@@ -189,8 +189,13 @@ def auto_submit():
                 print "%s hour(s) have passed, %s tickets submitted so far" %(round(mins,2), count)
             else:
                 print "%s minutes have passed, %s tickets submitted so far" %(round(mins,2), count)
+                if num != 0:
+                    if (round(mins,2) > num):
+                        prompt_user()
         else:
             print "%s seconds have passed, %s tickets submitted so far" %(round(time.time()-start,2), count)
+
+
 
         print "sleeping for %s minutes..." %minutes,
 
@@ -216,10 +221,13 @@ def resolveTickets():
         else:
             print "failed"
 
+        sys.stdout.write(CURSOR_UP_ONE)
+        sys.stdout.write(ERASE_LINE)
 
+    print ("All done")
 
 def prompt_user():
-    choice = raw_input("\nPlease enter a value: \nAdd contacts (m)anually, or (r)ead from file.\nAdd (t)ickets, (u)pdate tickets or add (s)olution articles \nChanges will be made to " + color.CYAN     + domain + color.END + ".freshservice.com. (c)hange domain \n")
+    choice = raw_input("\nPlease enter a value: \nAdd contacts (m)anually, or (r)ead from file.\nAdd (t)ickets, (u)pdate tickets\nChanges will be made to " + color.CYAN     + domain + color.END + ".freshservice.com.\n(c)hange domain \n")
 
     if choice == ("m" or "M"):
         manual_contact()
@@ -231,8 +239,15 @@ def prompt_user():
     elif choice == ("t" or "T"):
         mode = raw_input("(C)ontinuous submission or (o)ne time?: ")
         if mode == ("c" or "C"):
-            print "Beginning continuous submission of tickets..."
-            auto_submit()
+            time = raw_input("(I)ndefinitely or time (b)ased?: ")
+            if time == ("i" or "I"):
+                print "Beginning continuous submission of tickets..."
+                auto_submit(0)
+            elif time == ("b" or "B"):
+                print "hit"
+                num = int(input("How many minutes of continuous submission?: "))
+                print "Beginning %s minutes of ticket submission" %num
+                auto_submit(num)
         elif mode == ("o" or "O"):
             num = int(input("How many tickets would you like to submit?: "))
             ticketAutoSubmit(num)
@@ -241,10 +256,6 @@ def prompt_user():
     elif choice == ("c" or "C"):
         domain_change()
         prompt_user()
-
-    elif choice == ("s" or "S"):
-        num = raw_input("How many solutions articles do you want to submit? ")
-        article_submit(num)
 
     elif choice == ("u" or "U"):
         resolveTickets();
