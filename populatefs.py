@@ -227,33 +227,33 @@ def resolveTickets():
     print ("All done")
 
 def prompt_user():
-    choice = raw_input("\nPlease enter a value: \nAdd contacts (m)anually, or (r)ead from file.\nAdd (t)ickets, (u)pdate tickets\nChanges will be made to " + color.CYAN     + domain + color.END + ".freshservice.com.\n(c)hange domain \n")
+    choice = raw_input("\nPlease enter a value: \nAdd contacts (m)anually, or (r)ead from file.\nAdd (t)ickets, (u)pdate tickets\nChanges will be made to " + color.CYAN     + domain + color.END + ".freshservice.com.\n(c)hange domain \n").lower()
 
-    if choice == ("m" or "M"):
+    if choice == ("m"):
         manual_contact()
 
-    elif choice == ("r" or "R"):
+    elif choice == ("r"):
         contacts_file = raw_input("Enter the name of the file to read [Case Sensitive]: ")
         file_contacts(contacts_file)
 
-    elif choice == ("t" or "T"):
-        mode = raw_input("(C)ontinuous submission or (o)ne time?: ")
-        if mode == ("c" or "C"):
-            time = raw_input("(I)ndefinitely or time (b)ased?: ")
-            if time == ("i" or "I"):
+    elif choice == ("t"):
+        mode = raw_input("(C)ontinuous submission or (o)ne time?: ").lower()
+        if mode == ("c"):
+            time = raw_input("(I)ndefinitely or time (b)ased?: ").lower()
+            if time == ("i"):
                 print "Beginning continuous submission of tickets..."
                 auto_submit(0)
-            elif time == ("b" or "B"):
+            elif time == ("b"):
                 print "hit"
                 num = int(input("How many minutes of continuous submission?: "))
                 print "Beginning %s minutes of ticket submission" %num
                 auto_submit(num)
-        elif mode == ("o" or "O"):
+        elif mode == ("o"):
             num = int(input("How many tickets would you like to submit?: "))
             ticketAutoSubmit(num)
         prompt_user()
 
-    elif choice == ("c" or "C"):
+    elif choice == ("c"):
         domain_change()
         prompt_user()
 
