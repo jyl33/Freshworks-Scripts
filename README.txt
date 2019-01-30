@@ -26,3 +26,5 @@
 - To change frequency and number of tickets submitted:
 	This can be edited in the auto_submit() function.
 	Find the function and there are comments with instructions on how to edit the values
+	
+- If all of your tickets are being assigned low priority, turn off the Priority Matrix
