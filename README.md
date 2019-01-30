@@ -9,7 +9,7 @@
 	
 		1. curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 		2. python get-pip.py
-		3. Install requests 'pip install requests' on the command line
+		3. pip install requests
 
 
 
