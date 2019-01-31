@@ -25,7 +25,7 @@
 	To find the exact name for the field:
 		
 		1. Install the Json Viewer Chrome extension https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US
-		2. go to https://domain.freshservice.com/helpdesk/tickets.json
+		2. go to https://*domain*.freshservice.com/helpdesk/tickets.json
 		3. Search for the custom field name
 
 - To change frequency and number of tickets submitted:
