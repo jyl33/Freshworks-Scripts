@@ -22,7 +22,7 @@
 	'{ "helpdesk_ticket":{"description":"WiFi Down"..."source": 2 **, "custom_field": { "type_194465": "L1", "how_long_have_you_had_this_issue_194465":"Less than a day"}**} }'  
 	(Ex: 2 custom fields named "type" and "how long have you had this issue?")
 	
-	To find the exact name for the field,
+	To find the exact name for the field:
 		
 		1. Install the Json Viewer Chrome extension https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US
 		2. go to https://domain.freshservice.com/helpdesk/tickets.json
